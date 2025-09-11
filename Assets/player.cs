@@ -1,0 +1,35 @@
+﻿using System;
+using UnityEngine;
+
+public class Player : Character
+{
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    public float speed = 5f;
+    private Animator animator;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>(); // gán Animator từ GameObject
+    }
+
+    private void Update()
+    {
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+        Vector2 dir = new Vector2(x, y).normalized;
+
+        // Di chuyển
+        transform.position += (Vector3)(dir * speed * Time.deltaTime);
+        // Lật nhân vật
+        if (dir.x != 0)
+        {
+            spriteRenderer.flipX = dir.x < 0;
+        }
+
+        // Kiểm tra trạng thái di chuyển
+        if (dir.magnitude > 0) // đang nhấn phím WASD
+        {
+            animator.SetTrigger("loadmove");
+        }
+    }
+}
