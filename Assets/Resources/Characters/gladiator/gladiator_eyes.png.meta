@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gladiator_eyes_0: -8941476021895455913
+      gladiator_eyes_1: -7649335929436850741
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

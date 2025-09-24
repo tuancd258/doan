@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      masochist_eyes_0: -9184393861534370100
+      masochist_eyes_1: 6871703367282817710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

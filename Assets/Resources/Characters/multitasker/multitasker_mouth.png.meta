@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      multitasker_mouth_0: 2164017998331721234
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

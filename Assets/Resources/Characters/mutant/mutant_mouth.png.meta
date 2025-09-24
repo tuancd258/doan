@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mutant_mouth_0: 78094061096755861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

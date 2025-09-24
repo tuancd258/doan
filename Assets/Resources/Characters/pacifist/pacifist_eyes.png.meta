@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pacifist_eyes_0: 2608227135110787122
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

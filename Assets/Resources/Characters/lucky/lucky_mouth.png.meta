@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lucky_mouth_0: -485613152882907218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

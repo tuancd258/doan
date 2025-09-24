@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lucky_eyes_0: 5935762631958235884
+      lucky_eyes_1: 6877897497899560474
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

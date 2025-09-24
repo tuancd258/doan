@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ranger_mouth_0: -1230917372044572114
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
