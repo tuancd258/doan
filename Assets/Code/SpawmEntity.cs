@@ -9,7 +9,7 @@ public class SpawmEntity : MonoBehaviour
     [SerializeField] private float maximumSpawmTime = 3f;
     [SerializeField] private Vector2 spawnAreaSize = new Vector2(5f, 5f);
     [SerializeField] private GameObject spawnEffectPrefab;
-
+    [SerializeField] private GameObject enity;
     private float spawmTime;
     private PoolManager poolManager;
 
@@ -61,7 +61,7 @@ public class SpawmEntity : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         // Spawn quái từ pool
-        GameObject enemy = PoolManager.Instance.Get(1); // 1 là index enemy trong PoolManager.prefabs
+        GameObject enemy = PoolManager.Instance.Get(enity); // 1 là index enemy trong PoolManager.prefabs
         enemy.transform.position = position;
         enemy.transform.rotation = Quaternion.identity;
     }

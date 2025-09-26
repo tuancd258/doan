@@ -19,12 +19,14 @@ namespace Goldmetal.UndeadSurvivor
         public void SetDirection(Vector2 dir)
         {
             direction = dir.normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            // Gán rotation cho đạn
+            transform.rotation = Quaternion.Euler(0, 0, angle);
         }
-
         void Update()
         {
             // di chuyển
-            transform.Translate(direction * speed * Time.deltaTime);
+            transform.Translate(direction * speed * Time.deltaTime, Space.World);
 
             // countdown
             lifeTimer -= Time.deltaTime;

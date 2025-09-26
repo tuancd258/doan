@@ -1,32 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Goldmetal.UndeadSurvivor
 {
     public class PoolManager : MonoBehaviour
     {
-        public GameObject[] prefabs;
-
-        List<GameObject>[] pools;
+        public GameObject[] prefabs; // Các prefab đăng ký sẵn
+        private Dictionary<GameObject, List<GameObject>> pools;
         public static PoolManager Instance;
 
         void Awake()
         {
-            pools = new List<GameObject>[prefabs.Length];
-
-            for (int index = 0; index < pools.Length; index++)
-            {
-                pools[index] = new List<GameObject>();
-            }
             Instance = this;
+
+            pools = new Dictionary<GameObject, List<GameObject>>();
+            foreach (var prefab in prefabs)
+            {
+                pools[prefab] = new List<GameObject>();
+            }
         }
 
-        public GameObject Get(int index)
+        // Lấy object theo prefab trực tiếp
+        public GameObject Get(GameObject prefab)
         {
+            if (!pools.ContainsKey(prefab))
+            {
+                pools[prefab] = new List<GameObject>();
+            }
+
             GameObject select = null;
 
-            foreach (GameObject item in pools[index])
+            // Tìm object inactive trong pool
+            foreach (var item in pools[prefab])
             {
                 if (!item.activeSelf)
                 {
@@ -36,19 +41,19 @@ namespace Goldmetal.UndeadSurvivor
                 }
             }
 
+            // Nếu không có, tạo mới
             if (!select)
             {
-                select = Instantiate(prefabs[index], transform);
-                pools[index].Add(select);
+                select = Instantiate(prefab, transform);
+                pools[prefab].Add(select);
             }
 
             return select;
         }
+
         public void Despawn(GameObject obj)
         {
             obj.SetActive(false); // Trả về pool
         }
     }
-
 }
-

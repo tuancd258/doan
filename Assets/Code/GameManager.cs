@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public string SelectedCharacter;
     public Texture2D SelectedCharacterTexture;
 
+    public string SelectedWeapon;
+    public Texture2D SelectedWeaponTexture;
     void Awake()
     {
         if (Instance == null)

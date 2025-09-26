@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: pistol
+  m_EditorClassIdentifier: Assembly-CSharp::RangedWeaponData
+  weaponName: pistol
+  level: 1
+  weaponPrefab: {fileID: 2286971803443147728, guid: da1740f15376f5141a77f4fbbcd157df, type: 3}
+  damage: 10
+  cooldown: 0.2
+  projectilePrefab: {fileID: 1983667400483338957, guid: 6437b6d03ffe1174d8a2efcfbc253cc8, type: 3}
