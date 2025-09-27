@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: pistol
+  m_Name: pistol 1
   m_EditorClassIdentifier: Assembly-CSharp::RangedWeaponData
   weaponName: pistol
   level: 1
   weaponPrefab: {fileID: 2286971803443147728, guid: da1740f15376f5141a77f4fbbcd157df, type: 3}
-  damage: 10
-  cooldown: 0.2
+  damage: 0
+  cooldown: 0
   projectilePrefab: {fileID: 1983667400483338957, guid: 6437b6d03ffe1174d8a2efcfbc253cc8, type: 3}
