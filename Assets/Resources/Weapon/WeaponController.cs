@@ -11,11 +11,31 @@ public class WeaponController : MonoBehaviour
     protected float currentCooldown;
     public bool isAttack=false;
     public Transform posWeapon;
+    public BoxCollider2D capsuleCollider;
+    public void Start()
+    {
+        capsuleCollider = GetComponent<BoxCollider2D>();
+        capsuleCollider.enabled = false;
+    }
     public void Initialize(WeaponData data)
     {
         weaponData = data;
     }
-
+    public void SetTarget(Vector3 dir)
+    {
+        // Tính góc theo arctangent
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        // Gán rotation cho vũ khí
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+        if (angle >= 90f || angle <= -90f)
+        {
+            transform.localScale = new Vector3(1, -1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+    }
     public void Tick(Transform target)
     {
         currentCooldown -= Time.deltaTime;
@@ -52,6 +72,7 @@ public class WeaponController : MonoBehaviour
         }
         else
         {
+            capsuleCollider.enabled = true;
             StartCoroutine(MeleeAttackRoutine(target));
         }
     }
@@ -73,6 +94,7 @@ public class WeaponController : MonoBehaviour
             transform.localPosition = Vector3.Lerp(Attackpos, Startpos, t);
             yield return null;
         }
+        capsuleCollider.enabled=false;
         isAttack = false;
         transform.localPosition = Startpos;
     }

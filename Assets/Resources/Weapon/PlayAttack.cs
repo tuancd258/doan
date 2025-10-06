@@ -55,9 +55,12 @@ public class PlayerAttack : MonoBehaviour
         for (int i = 0; i < number; i++)
         {
 
-            //WeaponData data = startingWeaponsData;
-            WeaponData data1 = GameManager.Instance.SelectedWeapon;
-            GameObject prefab = Instantiate(data1.weaponcontroller, (transform.position + pos[i]), Quaternion.identity, transform);
+            WeaponData data = startingWeaponsData;
+            if (GameManager.Instance != null)
+            {
+                data = GameManager.Instance.SelectedWeapon;
+            }
+            GameObject prefab = Instantiate(data.weaponcontroller, (transform.position + pos[i]), Quaternion.identity, transform);
             WeaponController weaponInstance = prefab.GetComponent<WeaponController>();
 
             // Instantiate prefab trên player
@@ -65,7 +68,7 @@ public class PlayerAttack : MonoBehaviour
             // Gán WeaponData
             if (weaponInstance != null)
             {
-                weaponInstance.Initialize(data1);
+                weaponInstance.Initialize(data);
 
                 // Thêm vào danh sách equippedWeapons
                 equippedWeapons.Add(weaponInstance);
@@ -90,21 +93,10 @@ public class PlayerAttack : MonoBehaviour
         {
             foreach (var weapon in equippedWeapons)
             {
-                if(weapon.isAttack) break;
+                if(weapon.isAttack) continue;
                 Vector3 dir = (nearestEnemy.transform.position - transform.position).normalized;
 
-                // Tính góc theo arctangent
-                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                // Gán rotation cho vũ khí
-                weapon.transform.rotation = Quaternion.Euler(0, 0, angle);
-                if (angle >= 90f || angle <= -90f)
-                {
-                    weapon.transform.localScale = new Vector3(1, -1, 1);
-                }
-                else
-                {
-                    weapon.transform.localScale = new Vector3(1, 1, 1);
-                }
+               weapon.SetTarget(dir);
                 weapon.Tick(nearestEnemy.transform);
             }
 

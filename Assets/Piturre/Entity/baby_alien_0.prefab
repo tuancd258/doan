@@ -169,3 +169,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  tien: {fileID: 4676611635442518736, guid: 9a13335298db5304ebb1874a713bf5f1, type: 3}

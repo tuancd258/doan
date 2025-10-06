@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Player : Character
+public class Player: MonoBehaviour 
 {
     private SpriteRenderer spriteRenderer;
     public SpriteRenderer spriteMap;
