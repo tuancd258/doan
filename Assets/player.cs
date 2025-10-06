@@ -4,7 +4,8 @@ public class Player: MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     public SpriteRenderer spriteMap;
-    public float speed = 5f;
+    public PlayerStarsData starData;
+    private float speed;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -30,6 +31,7 @@ public class Player: MonoBehaviour
         {
             Debug.LogWarning("Không tìm thấy Texture2D trong GameManager!");
         }
+        speed=starData.moveSpeed;
     }
 
     private void Update()

@@ -7,6 +7,7 @@ public class PlayerStarsData : ScriptableObject
     public float armor = 0f;
     public float dodgeChance = 0f;
     public float moveSpeed = 5f;
+    public int leves = 1;
 
     public float meleeDamage = 10f;
     public float rangedDamage =8f;
