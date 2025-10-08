@@ -21,6 +21,7 @@ public class ShopManager : MonoBehaviour
 
     List<ShopItemData> allItems = new List<ShopItemData>();
     List<GameObject> currentSlots = new List<GameObject>();
+    List<WeaponData> inventory = new List<WeaponData>();
 
     private void Awake()
 
@@ -32,6 +33,10 @@ public class ShopManager : MonoBehaviour
     {
         // Load tất cả Item từ thư mục Resources/Items
         allItems.AddRange(Resources.LoadAll<ShopItemData>("Items"));
+        inventory.AddRange(Resources.LoadAll<WeaponData>("Weapon/Meele"));
+        inventory.AddRange(Resources.LoadAll<WeaponData>("Weapon/Ranger"));
+
+
         Debug.Log("Loaded items: " + allItems.Count);
         UpdateGoldUI();
         OpenShop();
@@ -62,11 +67,22 @@ public class ShopManager : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
-            ShopItemData randomItem = allItems[Random.Range(0, allItems.Count)];
-            Debug.Log("Creating slot for: " + randomItem.itemName);
-            GameObject slot = Instantiate(itemSlotPrefab, itemContainer);
-            slot.GetComponent<ItemSlot>().Setup(randomItem, this);
-            currentSlots.Add(slot);
+            bool spawnWeapon = Random.value > 0.5f; // 50% là vũ khí, 50% là item
+
+            if (spawnWeapon && inventory.Count > 0)
+            {
+                WeaponData weapon = inventory[Random.Range(0, inventory.Count)];
+                GameObject slot = Instantiate(itemSlotPrefab, itemContainer);
+                slot.GetComponent<ItemSlot>().SetupWeapon(weapon, this);
+                currentSlots.Add(slot);
+            }
+            else if (allItems.Count > 0)
+            {
+                ShopItemData item = allItems[Random.Range(0, allItems.Count)];
+                GameObject slot = Instantiate(itemSlotPrefab, itemContainer);
+                slot.GetComponent<ItemSlot>().Setup(item, this);
+                currentSlots.Add(slot);
+            }
         }
     }
     public void nextWave()
@@ -93,25 +109,28 @@ public class ShopManager : MonoBehaviour
         currentSlots.Clear();
     }
 
-    public void BuyItem(ShopItemData item)
+    public bool BuyItem(ShopItemData item)
     {
         if (playerGold >= item.price)
         {
             playerGold -= item.price;
             UpdateGoldUI();
-            Debug.Log("Bought: " + item.itemName);
+          addToinventory(item);
+            Debug.Log("Bought item: " + item.itemName);
+            return true;
 
             // TODO: gán item cho PlayerWeapons
         }
         else
         {
             Debug.Log("Not enough gold!");
+            return false;
         }
     }
 
     public void Roll()
     {
-               if (playerGold >= roll && playerGold>=0 )
+               if (playerGold >= roll  )
         {
             playerGold -= roll;
             roll++;
@@ -130,6 +149,54 @@ public class ShopManager : MonoBehaviour
     {
         goldText.text = "Gold: " + playerGold;
     }
+    void addToinventory(ShopItemData item)
+    {
+ 
+    }
+    public bool BuyWeapon(WeaponData weapon)
+    {
+        if (playerGold >= weapon.price)
+        {
+            playerGold -= weapon.price;
+            UpdateGoldUI();
+
+            addWeaponToInventory(weapon);
+
+            Debug.Log($"🪓 Bought weapon: {weapon.weaponName}");
+            return true;
+        }
+        else
+        {
+            Debug.Log("💰 Not enough gold to buy weapon!");
+            return false;
+        }
+    }
+
+    void addWeaponToInventory(WeaponData weapon)
+    {
+       
+        PlayerAttack player = FindObjectOfType<PlayerAttack>();
+
+        if (player == null)
+        {
+            Debug.LogError("❌ Không tìm thấy PlayerAttack trong scene!");
+            return;
+        }
+
+        if (weapon == null)
+        {
+            Debug.LogError("❌ Weapon bị null khi mua!");
+            return;
+        }
+
+        // Thêm vũ khí vào người chơi
+        player.AddWeapon(weapon);
+
+        Debug.Log($"✅ Đã thêm {weapon.weaponName} vào người chơi.");
+    }
+
+
+
 
 
 

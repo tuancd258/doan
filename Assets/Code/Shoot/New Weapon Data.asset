@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2637ba48ce55e7408f8c479b7c6e3a7, type: 3}
-  m_Name: chopper
+  m_Name: New Weapon Data
   m_EditorClassIdentifier: 
   weaponName: 
   level: 1
-  weaponcontroller: {fileID: 645626839347222741, guid: e6a6b227e29e1214883c727a76cc3c82, type: 3}
+  weaponPrefab: {fileID: 5479370840166100836, guid: 06e88f702693e2e4e93768d216141589, type: 3}
   damage: 0
-  cooldown: 1
-  price: 6
-  projectilePrefab: {fileID: 0}
+  cooldown: 0.2
+  projectilePrefab: {fileID: 3785672876046712895, guid: be4635e2bbfd578449b09f65156b766a, type: 3}
   projectileSpeed: 0
-  attackRadius: 1
+  attackRadius: 0
   knockbackForce: 0
-  weaponType: 0
+  weaponType: 1

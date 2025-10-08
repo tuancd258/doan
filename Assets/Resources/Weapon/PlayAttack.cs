@@ -122,4 +122,38 @@ public class PlayerAttack : MonoBehaviour
 
         return e;
     }
+    public void AddWeapon(WeaponData newWeapon)
+    {
+       if(equippedWeapons.Count >= 6)
+        {
+            Debug.Log("Đã đạt số lượng vũ khí tối đa!");
+            return;
+        }
+        Vector3 spawnPos = Vector3.zero;
+
+        int i = equippedWeapons.Count;
+        switch (i)
+        {
+            case 0: spawnPos = new Vector3(0.25f, -0.3f, -1); break;
+            case 1: spawnPos = new Vector3(-0.3f, -0.2f, -1); break;
+            case 2: spawnPos = new Vector3(0.2f, 0.6f, -1); break;
+            case 3: spawnPos = new Vector3(0.6f, 0.5f, -1); break;
+            case 4: spawnPos = new Vector3(-0.5f, 0.35f, -1); break;
+            default: spawnPos = new Vector3(0, 0.7f, -1); break;
+        }
+
+        GameObject prefab = Instantiate(newWeapon.weaponcontroller, transform.position + spawnPos, Quaternion.identity, transform);
+        WeaponController weaponInstance = prefab.GetComponent<WeaponController>();
+
+        if (weaponInstance != null)
+        {
+            weaponInstance.Initialize(newWeapon);
+            equippedWeapons.Add(weaponInstance);
+        }
+        else
+        {
+            Debug.LogWarning("Không tìm thấy WeaponController trong prefab của vũ khí mới!");
+        }
+    }
+
 }

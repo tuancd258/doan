@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectedCharacter: 
   SelectedCharacterTexture: {fileID: 0}
+  SelectedWeapon: {fileID: 0}
 --- !u!4 &766105662
 Transform:
   m_ObjectHideFlags: 0
@@ -397,6 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentParent: {fileID: 1645166219}
   characterButtonPrefab: {fileID: 2037274500}
+  namefle: Characters
 --- !u!1 &1372831668
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,19 +6,36 @@ public class WeaponData : ScriptableObject
     public string weaponName;
     public int level = 1;
     public GameObject weaponcontroller;
-    //public GameObject weaponPrefab;
     public float damage;
-    public float cooldown=1f;
+    public float cooldown = 1f;
+    public int price;
+    public Sprite icon;
 
-    // Cho ranged
+    // Ranged
     public GameObject projectilePrefab;
     public float projectileSpeed;
 
-    // Cho melee
-    public float attackRadius=1f;
+    // Melee
+    public float attackRadius = 1f;
     public float knockbackForce;
 
-    public WeaponType weaponType; // enum để phân loại
+    public WeaponType weaponType;
+
+
+    public Sprite GetIcon()
+    {
+        if (icon != null)
+            return icon;
+
+        if (weaponcontroller != null)
+        {
+            SpriteRenderer sr = weaponcontroller.GetComponent<SpriteRenderer>();
+            if (sr != null)
+                return sr.sprite;
+        }
+
+        return null;
+    }
 }
 
 public enum WeaponType

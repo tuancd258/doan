@@ -25,7 +25,6 @@ public class WeaponManager : MonoBehaviour
 
             GameObject btnObj = Instantiate(characterButtonPrefab, contentParent);
 
-            // Tạo sprite từ texture icon để hiển thị trong UI
             Sprite iconSprite = Sprite.Create(
                 icon,
                 new Rect(0, 0, icon.width, icon.height),

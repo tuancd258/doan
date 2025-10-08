@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingWeaponsData: {fileID: 11400000, guid: 9c142b4624e661a4e9d1ea355b140c13, type: 2}
-  number: 6
+  number: 1
 --- !u!114 &1587576120
 MonoBehaviour:
   m_ObjectHideFlags: 0

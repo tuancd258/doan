@@ -49,6 +49,6 @@ public class UI_Manage : MonoBehaviour
         GameManager.Instance.SelectedCharacterTexture = characterTexture;
 
         // Load scene mới
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Weapon");
     }
 }

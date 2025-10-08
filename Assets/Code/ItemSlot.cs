@@ -1,6 +1,7 @@
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using static UnityEditor.Progress;
 
 public class ItemSlot : MonoBehaviour
 {
@@ -26,7 +27,31 @@ public class ItemSlot : MonoBehaviour
 
             buyButton.onClick.RemoveAllListeners();
             buyButton.onClick.AddListener(() => shopManager.BuyItem(item));
+
+
+
       
 
     }
+    public void SetupWeapon(WeaponData weapon, ShopManager manager)
+    {
+        shopManager = manager;
+
+        // ✅ Lấy icon từ WeaponData
+        icon.sprite = weapon.GetIcon();
+
+        // Nếu vẫn null, kiểm tra spriteRenderer
+        if (icon.sprite == null)
+            Debug.LogWarning($"⚠ Weapon {weapon.weaponName} chưa có icon hoặc sprite!");
+
+        nameText.text = weapon.weaponName;
+        priceText.text = weapon.price.ToString();
+        description.text = $"Damage: {weapon.damage}\nCooldown: {weapon.cooldown}s";
+
+        buyButton.onClick.RemoveAllListeners();
+        buyButton.onClick.AddListener(() => shopManager.BuyWeapon(weapon));
+    }
+
+
+
 }

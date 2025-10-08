@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public string SelectedCharacter;
     public Texture2D SelectedCharacterTexture;
-    public static List<GameObject> Enemy=new List<GameObject>();
+    public static List<GameObject> Enemy = new List<GameObject>();
     public WeaponData SelectedWeapon;
     public static void addEnemy(GameObject enemy)
     {
