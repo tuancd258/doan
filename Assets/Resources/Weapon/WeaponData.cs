@@ -7,7 +7,7 @@ public class WeaponData : ScriptableObject
     public int level = 1;
     public GameObject weaponcontroller;
     //public GameObject weaponPrefab;
-    public float damage;
+    public float damage=10f;
     public float cooldown=1f;
 
     // Cho ranged

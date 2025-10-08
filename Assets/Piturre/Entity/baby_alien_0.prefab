@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8895133809426514186}
   - component: {fileID: 6461449299962529166}
   - component: {fileID: 511826647406295399}
-  - component: {fileID: 6073790046908964492}
   - component: {fileID: 3316112192538769575}
   m_Layer: 0
   m_Name: baby_alien_0
@@ -80,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4387742207518956170, guid: 14b15c83379800544bc4097b19fc350f, type: 3}
+  m_Sprite: {fileID: -855298285791758126, guid: 3564ed43bb9ec5a4fa6a6ee06b62f68a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,12 +97,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5434139167821671100}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1696c6a49fb1bc848a46f52225e599ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7309370967193197961}
   spriteRenderer: {fileID: 8895133809426514186}
   speed: 3
 --- !u!58 &511826647406295399
@@ -142,20 +140,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.44
---- !u!114 &6073790046908964492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5434139167821671100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698c8d45fa544034a98d29c8eff583b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  isFacingRight: 1
 --- !u!114 &3316112192538769575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,3 +154,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   tien: {fileID: 4676611635442518736, guid: 9a13335298db5304ebb1874a713bf5f1, type: 3}
+  pool: {fileID: 0}

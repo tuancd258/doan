@@ -2,10 +2,14 @@
 
 public class enemies : MonoBehaviour
 {
-    [SerializeField] private Transform player; // tốt hơn dùng Transform
+    private Transform player; // tốt hơn dùng Transform
     [SerializeField] private SpriteRenderer spriteRenderer;
     public float speed = 3f;
-
+    public void Start()
+    {
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+        player = p.transform;
+    }
     void Update()
     {
         if (player != null)

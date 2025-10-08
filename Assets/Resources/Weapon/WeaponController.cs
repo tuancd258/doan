@@ -14,8 +14,12 @@ public class WeaponController : MonoBehaviour
     public BoxCollider2D capsuleCollider;
     public void Start()
     {
-        capsuleCollider = GetComponent<BoxCollider2D>();
-        capsuleCollider.enabled = false;
+        if (weaponData.weaponType == WeaponType.Melee)
+        {
+            capsuleCollider = GetComponent<BoxCollider2D>();
+            capsuleCollider.enabled = false;
+        }
+        
     }
     public void Initialize(WeaponData data)
     {
@@ -51,11 +55,12 @@ public class WeaponController : MonoBehaviour
     {
         if (weaponData.weaponType == WeaponType.Ranged)
         {
-            Debug.Log("Chém vào quái");
+            //Debug.Log("Chém vào quái");
             if (weaponData == null) return;
 
             // Lấy đạn từ pool
             GameObject bullet = PoolManager.Instance.Get(weaponData.projectilePrefab);
+            isAttack = false;
             Vector3 pos = new Vector3(posWeapon.transform.position.x, posWeapon.transform.position.y, transform.position.z);
             // Reset vị trí & xoay
             bullet.transform.position = pos;
