@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spiky_shield_icon_0: -7244126746988416631
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

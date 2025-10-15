@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chopper_icon_0: -6325019493333182760
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

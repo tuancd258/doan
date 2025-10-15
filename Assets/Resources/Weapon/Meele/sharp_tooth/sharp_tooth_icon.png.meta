@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sharp_tooth_icon_0: 2372362194438943465
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

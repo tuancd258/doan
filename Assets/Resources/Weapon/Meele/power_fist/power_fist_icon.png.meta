@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      power_fist_icon_0: 6930986460405006596
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

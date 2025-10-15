@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public string SelectedCharacter;
     public Texture2D SelectedCharacterTexture;
     public static List<GameObject> Enemy=new List<GameObject>();
+    public static List<GameObject> Coin = new List<GameObject>();
     public WeaponData SelectedWeapon;
     public static void addEnemy(GameObject enemy)
     {
@@ -17,6 +18,15 @@ public class GameManager : MonoBehaviour
     public static void delEnemy(GameObject enemy)
     {
         Enemy.Remove(enemy);
+    }
+    
+    public static void addCoin(GameObject enemy)
+    {
+        Coin.Add(enemy);
+    }
+    public static void delCoin(GameObject enemy)
+    {
+        Coin.Remove(enemy);
     }
     void Awake()
     {

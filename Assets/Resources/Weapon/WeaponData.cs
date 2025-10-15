@@ -9,6 +9,7 @@ public class WeaponData : ScriptableObject
     //public GameObject weaponPrefab;
     public float damage=10f;
     public float cooldown=1f;
+    public Sprite icon;
 
     // Cho ranged
     public GameObject projectilePrefab;

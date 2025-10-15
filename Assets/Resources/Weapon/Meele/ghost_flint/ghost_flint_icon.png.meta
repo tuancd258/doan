@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ghost_flint_icon_0: 9216539091017387550
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

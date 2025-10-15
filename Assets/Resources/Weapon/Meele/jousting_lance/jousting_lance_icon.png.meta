@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jousting_lance_icon_0: -386991771239696852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

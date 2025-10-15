@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      circular_saw_0: -2389414771944532327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

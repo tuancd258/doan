@@ -1,32 +1,53 @@
 ﻿using UnityEngine;
 
-public class enemies : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    private Transform player; // tốt hơn dùng Transform
+    private Transform player;
     [SerializeField] private SpriteRenderer spriteRenderer;
     public float speed = 3f;
-    public void Start()
+    public CircleCollider2D Collider2D;
+    private float attackRange = 1f;    
+    public int damage = 10;             // sát thương gây ra
+    public float attackCooldown = 1f;   // 1 giây 1 lần tấn công
+    private float lastAttackTime;
+
+    void Start()
     {
+        Collider2D = GetComponent<CircleCollider2D>();
+        attackRange=Collider2D.radius;
         GameObject p = GameObject.FindGameObjectWithTag("Player");
-        player = p.transform;
+        if (p != null) player = p.transform;
+
     }
+
     void Update()
     {
-        if (player != null)
+        if (player == null) return;
+
+        Vector2 direction = (player.position - transform.position).normalized;
+        transform.position += (Vector3)(direction * speed * Time.deltaTime);
+
+        if (direction.x != 0)
         {
-            // Tính hướng từ enemy đến player
-            Vector2 direction = (player.position - transform.position).normalized;
-
-            // Di chuyển enemy về hướng player
-            transform.position += (Vector3)(direction * speed * Time.deltaTime);
-
-            if (direction.x != 0) { 
-                spriteRenderer.flipX = direction.x<0;
-            }
-
-            // Optional: xoay sprite về hướng di chuyển
-            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            //transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            spriteRenderer.flipX = direction.x < 0;
         }
+
+        // 2️⃣ Kiểm tra khoảng cách → gây damage
+        float distance = Vector3.Distance(transform.position, player.position);
+        if (distance <= attackRange && Time.time - lastAttackTime >= attackCooldown)
+        {
+            PlayerStats ps = player.GetComponent<PlayerStats>();
+            if (ps != null)
+            {
+                ps.TakeDamage(damage);
+                lastAttackTime = Time.time;
+            }
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

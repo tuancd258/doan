@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fighting_stick_0: 2301880460160196254
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

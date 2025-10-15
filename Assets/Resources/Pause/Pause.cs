@@ -37,7 +37,7 @@ public class Pause : MonoBehaviour
     new StarsUI { name="Armor",      icon=Resources.Load<Sprite>("Pause/armor"),       value=playerStarsData.armor.ToString() },
     new StarsUI { name="HealPerHit", icon=Resources.Load<Sprite>("Pause/hp_regeneration"),         value=playerStarsData.healPerHit.ToString() },
     new StarsUI { name="Dodge",      icon=Resources.Load<Sprite>("Pause/dodge"),       value=playerStarsData.dodgeChance.ToString() },
-    //new StarsUI { name="MoveSpeed",  icon=Resources.Load<Sprite>("Pause/speed"),   value=playerStarsData.moveSpeed.ToString() },
+    new StarsUI { name="MoveSpeed",  icon=Resources.Load<Sprite>("Pause/speed"),   value=playerStarsData.moveSpeed.ToString() },
     new StarsUI { name="MeleeDamage",icon=Resources.Load<Sprite>("Pause/melee_damage"), value=playerStarsData.meleeDamage.ToString() },
     new StarsUI { name="RangedDamage",icon=Resources.Load<Sprite>("Pause/ranged_damage"),value=playerStarsData.rangedDamage.ToString() },
     new StarsUI { name="AttackSpeed",icon=Resources.Load<Sprite>("Pause/attack_speed"), value=playerStarsData.attackSpeed.ToString() },
