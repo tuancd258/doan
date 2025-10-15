@@ -70,8 +70,15 @@ public class WeaponController : MonoBehaviour
                 BulletScript.SetDirection(dir);
             }
         }
-        else
+        else // Melee
         {
+            // ✅ Thêm đoạn kiểm tra này
+            if (capsuleCollider == null)
+            {
+                Debug.LogError($"Vũ khí '{weaponData.weaponName}' thiếu BoxCollider2D!");
+                return; // Dừng lại để không gây lỗi
+            }
+
             capsuleCollider.enabled = true;
             StartCoroutine(MeleeAttackRoutine(target));
         }

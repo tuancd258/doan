@@ -189,4 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd08c86a66ceb334e82ba1a9c530bc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttack: 1
   posWeapon: {fileID: 0}
+  capsuleCollider: {fileID: 0}

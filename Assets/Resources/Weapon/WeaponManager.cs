@@ -25,6 +25,7 @@ public class WeaponManager : MonoBehaviour
 
             GameObject btnObj = Instantiate(characterButtonPrefab, contentParent);
 
+            // Tạo sprite từ texture icon để hiển thị trong UI
             Sprite iconSprite = Sprite.Create(
                 icon,
                 new Rect(0, 0, icon.width, icon.height),
@@ -51,11 +52,11 @@ public class WeaponManager : MonoBehaviour
                 GameManager.Instance.SelectedWeapon = item;
                 SceneManager.LoadScene("SampleScene");
                 return;
-            }   
+            }
         }
 
-            Debug.Log("Không tìm thấy vũ khí");
-            // Load scene mới
-            SceneManager.LoadScene("SampleScene");
+        Debug.Log("Không tìm thấy vũ khí");
+        // Load scene mới
+        SceneManager.LoadScene("SampleScene");
     }
 }

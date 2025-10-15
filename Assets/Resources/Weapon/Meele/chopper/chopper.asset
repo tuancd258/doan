@@ -18,6 +18,7 @@ MonoBehaviour:
   damage: 0
   cooldown: 1
   price: 6
+  icon: {fileID: -6325019493333182760, guid: 43dfb2c1c5e734c45a5a8774864c18ff, type: 3}
   projectilePrefab: {fileID: 0}
   projectileSpeed: 0
   attackRadius: 1

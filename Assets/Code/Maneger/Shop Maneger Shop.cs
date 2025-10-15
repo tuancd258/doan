@@ -17,7 +17,7 @@ public class ShopManager : MonoBehaviour
     [SerializeField] int roll = 1;
 
 
-    public int playerGold = 100;
+    public int playerGold = 100000;
 
     List<ShopItemData> allItems = new List<ShopItemData>();
     List<GameObject> currentSlots = new List<GameObject>();
@@ -52,6 +52,8 @@ public class ShopManager : MonoBehaviour
         roll = 1;
         shopPanel.SetActive(true);
         GenerateShop();
+      PlayerAttack.Instance.UpdateWeaponUI();
+
     }
 
     public void CloseShop()
@@ -175,7 +177,7 @@ public class ShopManager : MonoBehaviour
     void addWeaponToInventory(WeaponData weapon)
     {
        
-        PlayerAttack player = FindObjectOfType<PlayerAttack>();
+        PlayerAttack player = FindFirstObjectByType<PlayerAttack>();
 
         if (player == null)
         {

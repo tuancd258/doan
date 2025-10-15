@@ -88,7 +88,7 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("LEVEL UP! Đạt cấp " + currentLevel);
 
         // --- THÊM DÒNG NÀY: Gọi hàm cập nhật UI mỗi khi lên cấp ---
-        UpdateLevelText();
+        UpdateLevelText();  
     }
 
     // --- THÊM HÀM NÀY: Một hàm riêng để cập nhật Text ---
