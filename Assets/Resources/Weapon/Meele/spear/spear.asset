@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2637ba48ce55e7408f8c479b7c6e3a7, type: 3}
+  m_Name: spear
+  m_EditorClassIdentifier: 
+  weaponName: 
+  level: 1
+  weaponcontroller: {fileID: 9127342341507252514, guid: 81b028ea698be99449056b4ed17df85e, type: 3}
+  damage: 0
+  cooldown: 1
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 0
+  attackRadius: 6
+  knockbackForce: 0
+  weaponType: 0

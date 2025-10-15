@@ -1,0 +1,44 @@
+﻿using Goldmetal.UndeadSurvivor;
+using UnityEngine;
+
+public class Heal : MonoBehaviour
+{
+    public float maxHealth = 100f;
+    private float currentHealth;
+    public GameObject tien;
+    public PoolManager pool;
+    private void Start()
+    {
+        pool=PoolManager.Instance;
+    }
+    void OnEnable()
+    {
+        ResetHealth(); // mỗi lần spawn lại thì reset máu
+    }
+
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        //Debug.Log(gameObject.name + " trúng đạn, máu còn: " + currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+    }
+
+    private void Die()
+    {
+        //Debug.Log(gameObject.name + " đã chết!");
+        //Instantiate(tien,transform.position,Quaternion.identity);
+        GameObject coin = PoolManager.Instance.Get(tien);
+        coin.transform.position = transform.position;
+        GameManager.delEnemy(gameObject);
+        Goldmetal.UndeadSurvivor.PoolManager.Instance.Despawn(gameObject);
+    }
+}
