@@ -66,7 +66,7 @@ public class Manegerentity : MonoBehaviour
 
         timetext.text = "0";
         timetext.color = Color.green;
-    
+        Time.timeScale = 0f;
         SpawmEntity.instance.StopSpawm();
         SceneManager.LoadScene("ShopTest", LoadSceneMode.Additive);
 

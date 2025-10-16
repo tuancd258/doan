@@ -11,22 +11,13 @@ public class GameManager : MonoBehaviour
     public static List<GameObject> Enemy=new List<GameObject>();
     public static List<GameObject> Coin = new List<GameObject>();
     public WeaponData SelectedWeapon;
-    public static void addEnemy(GameObject enemy)
+    public static void addToList<T>(List<T> list,T obj)
     {
-        Enemy.Add(enemy);
+        list.Add(obj);
     }
-    public static void delEnemy(GameObject enemy)
+    public static void removeFormList<T>(List<T> list,T obj)
     {
-        Enemy.Remove(enemy);
-    }
-    
-    public static void addCoin(GameObject enemy)
-    {
-        Coin.Add(enemy);
-    }
-    public static void delCoin(GameObject enemy)
-    {
-        Coin.Remove(enemy);
+        list.Remove(obj);
     }
     void Awake()
     {

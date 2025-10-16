@@ -19,7 +19,7 @@ public class ShopManager : MonoBehaviour
 
     public int playerGold = 100000;
 
-    List<ShopItemData> allItems = new List<ShopItemData>();
+    List<ItemData> allItems = new List<ItemData>();
     List<GameObject> currentSlots = new List<GameObject>();
     List<WeaponData> inventory = new List<WeaponData>();
 
@@ -32,7 +32,7 @@ public class ShopManager : MonoBehaviour
     private void Start()
     {
         // Load tất cả Item từ thư mục Resources/Items
-        allItems.AddRange(Resources.LoadAll<ShopItemData>("Items"));
+        allItems.AddRange(Resources.LoadAll<ItemData>("Items"));
         inventory.AddRange(Resources.LoadAll<WeaponData>("Weapon/Meele"));
         inventory.AddRange(Resources.LoadAll<WeaponData>("Weapon/Ranger"));
 
@@ -80,7 +80,7 @@ public class ShopManager : MonoBehaviour
             }
             else if (allItems.Count > 0)
             {
-                ShopItemData item = allItems[Random.Range(0, allItems.Count)];
+                ItemData item = allItems[Random.Range(0, allItems.Count)];
                 GameObject slot = Instantiate(itemSlotPrefab, itemContainer);
                 slot.GetComponent<ItemSlot>().Setup(item, this);
                 currentSlots.Add(slot);
@@ -91,7 +91,7 @@ public class ShopManager : MonoBehaviour
     {
         CloseShop();
         Debug.Log("Next wave start!");
-
+        Time.timeScale = 1.0f;
         if (SceneManager.GetSceneByName("ShopTest").isLoaded)
         {
             SceneManager.UnloadSceneAsync("ShopTest").completed += (op) =>
@@ -111,7 +111,7 @@ public class ShopManager : MonoBehaviour
         currentSlots.Clear();
     }
 
-    public bool BuyItem(ShopItemData item)
+    public bool BuyItem(ItemData item)
     {
         if (playerGold >= item.price)
         {
@@ -151,7 +151,7 @@ public class ShopManager : MonoBehaviour
     {
         goldText.text = "Gold: " + playerGold;
     }
-    void addToinventory(ShopItemData item)
+    void addToinventory(ItemData item)
     {
 
     }

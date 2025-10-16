@@ -11,10 +11,10 @@ public class ItemSlot : MonoBehaviour
     [SerializeField] TextMeshProUGUI description;
     [SerializeField] Button buyButton;
 
-    ShopItemData currentItem;
+    ItemData currentItem;
     ShopManager shopManager;
 
-    public void Setup(ShopItemData item, ShopManager manager)
+    public void Setup(ItemData item, ShopManager manager)
     {
         currentItem = item;
         shopManager = manager;
@@ -37,10 +37,8 @@ public class ItemSlot : MonoBehaviour
     {
         shopManager = manager;
 
-        // ✅ Lấy icon từ WeaponData
         icon.sprite = weapon.icon;
 
-        // Nếu vẫn null, kiểm tra spriteRenderer
         if (icon.sprite == null)
             Debug.LogWarning($"⚠ Weapon {weapon.weaponName} chưa có icon hoặc sprite!");
 

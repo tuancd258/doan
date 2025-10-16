@@ -81,7 +81,7 @@ public class SpawmEntity : MonoBehaviour
         if (PoolManager.Instance != null)
         {
             enemy = PoolManager.Instance.Get(enity);
-            GameManager.addEnemy(enemy);
+            GameManager.addToList(GameManager.Enemy, enemy);
             enemy.transform.position = position;
             enemy.transform.rotation = Quaternion.identity;
         }

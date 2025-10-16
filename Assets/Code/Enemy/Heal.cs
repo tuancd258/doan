@@ -47,10 +47,9 @@ public class Heal : MonoBehaviour
         // Rơi coin
         GameObject coin = PoolManager.Instance.Get(tien);
         coin.transform.position = transform.position;
-        GameManager.addCoin(coin);
+        GameManager.addToList(GameManager.Coin, coin);
 
-        GameManager.delEnemy(gameObject);
-
+        GameManager.removeFormList(GameManager.Enemy, gameObject);
         // Tái chế quái
         Goldmetal.UndeadSurvivor.PoolManager.Instance.Despawn(gameObject);
     }
