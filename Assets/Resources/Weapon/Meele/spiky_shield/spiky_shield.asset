@@ -17,6 +17,8 @@ MonoBehaviour:
   weaponcontroller: {fileID: 4192620077782160006, guid: b3d603e6fb2a0484daaea03ba7b4c5bf, type: 3}
   damage: 0
   cooldown: 1
+  icon: {fileID: -7244126746988416631, guid: 2be8cda8b63440e478917a42cbf79eb3, type: 3}
+  price: 0
   projectilePrefab: {fileID: 0}
   projectileSpeed: 0
   attackRadius: 1

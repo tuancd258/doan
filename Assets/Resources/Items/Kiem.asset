@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kiem
   m_EditorClassIdentifier: 
   itemName: Kiem
-  icon: {fileID: 0}
+  icon: {fileID: -6312386683703364013, guid: 2de4f56378aa11140b158f28d8621afd, type: 3}
   price: 3
   description: 2323
   attack: 32

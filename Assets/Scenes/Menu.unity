@@ -327,11 +327,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1176300757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3902b1912d9cb845a46f54fa50347b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 73966f945e5a9a64da17fecf0534bef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentParent: {fileID: 1645166219}
-  characterButtonPrefab: {fileID: 2037274500}
+  SelectedCharacter: 
+  SelectedCharacterTexture: {fileID: 0}
+  SelectedWeapon: {fileID: 0}
 --- !u!224 &1176300760
 RectTransform:
   m_ObjectHideFlags: 0

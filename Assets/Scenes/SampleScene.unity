@@ -707,8 +707,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 277.82, y: -2.7799988}
-  m_SizeDelta: {x: -562.95, y: -23.55}
+  m_AnchoredPosition: {x: 277.82, y: 0}
+  m_SizeDelta: {x: -562.95, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &819158243
 MonoBehaviour:
@@ -763,10 +763,10 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 12
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: -13
+  m_Spacing: -10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -834,7 +834,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901559381859308399, guid: c93e7c7152ff1cf4db24582fe8af09c4, type: 3}
       propertyPath: m_Name
-      value: GameObject
+      value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322690561442161443, guid: c93e7c7152ff1cf4db24582fe8af09c4, type: 3}
+      propertyPath: m_Name
+      value: Black
       objectReference: {fileID: 0}
     - target: {fileID: 6648863782670931229, guid: c93e7c7152ff1cf4db24582fe8af09c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -875,6 +879,26 @@ PrefabInstance:
     - target: {fileID: 6648863782670931229, guid: c93e7c7152ff1cf4db24582fe8af09c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907227184879912389, guid: c93e7c7152ff1cf4db24582fe8af09c4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.833899
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563813940892140004, guid: c93e7c7152ff1cf4db24582fe8af09c4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8338987
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563813940892140004, guid: c93e7c7152ff1cf4db24582fe8af09c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563813940892140004, guid: c93e7c7152ff1cf4db24582fe8af09c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103600135347874237, guid: c93e7c7152ff1cf4db24582fe8af09c4, type: 3}
+      propertyPath: m_Name
+      value: Red
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1138,7 +1162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1488115861
 Transform:
   m_ObjectHideFlags: 0
@@ -1186,7 +1210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingWeaponsData: {fileID: 11400000, guid: 8ee0c11d0323523488b5895241b10f0c, type: 2}
-  number: 6
+  initialWeaponCount: 1
+  equippedWeapons: []
 --- !u!114 &1587576120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,7 +1333,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 9047816459284548965, guid: 387b5c43db4755843bc03d5f3d6bbd57, type: 3}
+  m_Sprite: {fileID: 9047816459284548965, guid: 960220a1dcefec9438eabae36cbd79b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

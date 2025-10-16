@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9addd4e54b7b649469fb4d10a1289d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 2246927955816610660}
-  speed: 5
+  spriteMap: {fileID: 0}
+  starData: {fileID: 0}
 --- !u!70 &5496175632952268969
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

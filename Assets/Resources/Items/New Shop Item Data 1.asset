@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: New Shop Item Data 1
   m_EditorClassIdentifier: 
   itemName: Bassiler
-  icon: {fileID: 491386231769067674, guid: 70bb12d8f13996b48ae159f871017698, type: 3}
+  icon: {fileID: -4401187164487311344, guid: 722397e76868af94cbeaac2792e7efb5, type: 3}
   price: 0
   description: jh
   attack: 5
