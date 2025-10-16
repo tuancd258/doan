@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b628b8d5d3a952e4190fe2dee41c7707, type: 3}
   m_Name: New Shop Item Data 1
   m_EditorClassIdentifier: 
-  itemName: Bassiler
+  itemName: Hk
   icon: {fileID: 491386231769067674, guid: 70bb12d8f13996b48ae159f871017698, type: 3}
   price: 0
   description: jh

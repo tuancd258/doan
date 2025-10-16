@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Ricado
   icon: {fileID: 7795581696891865066, guid: 66b9d52887be7db46b9952f3c40001fa, type: 3}
   price: 3
-  description: ricado milos
+  description: text1
   attack: 3
   attackSpeed: 1
   armor: 2

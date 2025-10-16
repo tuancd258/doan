@@ -2,38 +2,53 @@
 
 public class test : MonoBehaviour
 {
-    private Transform player;
-  
+    public Transform player;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     public float speed = 3f;
-    [SerializeField] private bool isFacingRight = true;
+    public CircleCollider2D attackCollider;
+    public float attackRange = 1f;   // phạm vi tấn công
+    public int damage = 10;             // sát thương gây ra
+    public float attackCooldown = 1f;   // 1 giây 1 lần tấn công
+    private float lastAttackTime;
+
     void Start()
     {
-        // Tìm Player theo tag
+        attackCollider= GetComponent<CircleCollider2D>();
+        attackRange= attackCollider.radius;
         GameObject p = GameObject.FindGameObjectWithTag("Player");
-        if (p != null)
-        {
-            player = p.transform;
-        }
+        if (p != null) player = p.transform;
     }
 
     void Update()
     {
-        if (player != null)
+        if (player == null) return;
+
+        // 1️⃣ Di chuyển về phía player
+        Vector2 direction = (player.position - transform.position).normalized;
+        transform.position += (Vector3)(direction * speed * Time.deltaTime);
+
+        if (direction.x != 0)
         {
-            Vector2 direction = (player.position - transform.position).normalized;
+            spriteRenderer.flipX = direction.x < 0;
+        }
 
-            transform.position += (Vector3)(direction * speed * Time.deltaTime);
-            if (direction.x > 0 && !isFacingRight) Flip();
-            else if (direction.x < 0 && isFacingRight) Flip();
-
+        // 2️⃣ Kiểm tra khoảng cách → gây damage
+        float distance = Vector3.Distance(transform.position, player.position);
+        if (distance <= attackRange && Time.time - lastAttackTime >= attackCooldown)
+        {
+            PlayerStats ps = player.GetComponent<PlayerStats>();
+            if (ps != null)
+            {
+                ps.TakeDamage(damage);
+                lastAttackTime = Time.time;
+            }
         }
     }
-    void Flip()
+
+    // 3️⃣ Optional: hiển thị phạm vi tấn công
+    void OnDrawGizmosSelected()
     {
-        isFacingRight = !isFacingRight; // đảo hướng
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-        
 }

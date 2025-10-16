@@ -17,7 +17,7 @@ public class SlotItem : MonoBehaviour
     private List<WeaponSlotButton> slotButtons = new List<WeaponSlotButton>();
     private const int maxSlots = 6;
 
-    private WeaponSlotButton activeConfirmationSlot = null; // Biến để theo dõi slot đang hiện nút "Delete"
+    private WeaponSlotButton activeConfirmationSlot = null; 
 
     private void Awake()
     {
@@ -32,7 +32,6 @@ public class SlotItem : MonoBehaviour
         }
     }
 
-    // ✅ SỬA LỖI 3: Dọn dẹp code bị trùng lặp
     private void InitializeSlots()
     {
         for (int i = 0; i < maxSlots; i++)
@@ -71,7 +70,6 @@ public class SlotItem : MonoBehaviour
         }
     }
 
-    // Hàm mới: Được gọi từ WeaponSlotButton để hiện nút xác nhận
     public void ShowDeleteConfirmation(WeaponSlotButton clickedSlot)
     {
         if (activeConfirmationSlot != null && activeConfirmationSlot != clickedSlot)
@@ -82,7 +80,7 @@ public class SlotItem : MonoBehaviour
         activeConfirmationSlot = clickedSlot;
     }
 
-    // Hàm mới: Dùng để ẩn nút "Delete" đang hiện nếu cần
+  
     public void HideActiveConfirmation()
     {
         if (activeConfirmationSlot != null)
@@ -118,18 +116,18 @@ public class SlotItem : MonoBehaviour
                 slotButtons[i].SetIndex(i);
 
                 button.onClick.RemoveAllListeners();
-                // ✅ SỬA LỖI 1 & 2: Dùng đúng biến 'button' và gọi đúng hàm
+                
                 button.onClick.AddListener(slotButtons[i].OnPrimarySlotClicked);
             }
             else
             {
-                // ---- NẾU Ô TRỐNG ----
+         
                 slotIcons[i].sprite = null;
                 slotIcons[i].color = new Color(1, 1, 1, 0.3f);
                 slotLocks[i].SetActive(true);
                 button.interactable = false;
 
-                // Ẩn nút delete nếu ô bị trống đi
+           
                 slotButtons[i].HideDeleteButton();
             }
         }

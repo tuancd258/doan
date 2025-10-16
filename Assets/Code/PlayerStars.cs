@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour
     public int expToNextLevel = 100;
     
     public static PlayerStats instance;
+    public HealthBar healthBar;
 
     // --- THÊM DÒNG NÀY: Tạo một ô trong Inspector để kéo Text vào ---
     [Header("UI References")]
@@ -47,24 +48,26 @@ public class PlayerStats : MonoBehaviour
     }
     public float TakeDamage(float dmg)
     {
-        float perDame;
-        if (currentArmor > 0)
-        {
-            perDame = 1 / (1 + (currentArmor / 15));
-        }else if (currentArmor < 0&&currentArmor >-15f)
-        {
-            perDame = (15-2*currentArmor) / (15-currentArmor);
-        }
-        else
-        {
-            perDame = 2;
-        }
+        Debug.Log("an cuc");
+        float perDame=0;
+        //if (currentArmor > 0)
+        //{
+        //    perDame = 1 / (1 + (currentArmor / 15));
+        //}else if (currentArmor < 0&&currentArmor >-15f)
+        //{
+        //    perDame = (15-2*currentArmor) / (15-currentArmor);
+        //}
+        //else
+        //{
+        //    perDame = 2;
+        //}
             float finalDmg = dmg*(1-perDame);
         if (Random.value < PlayerStarsData.dodgeChance)
         {
             finalDmg = 0;
         }
         currentHP-=finalDmg;
+        healthBar.SetHealthPercent(currentHP / PlayerStarsData.maxHP);
         if (currentHP < 0)
         {
             die();

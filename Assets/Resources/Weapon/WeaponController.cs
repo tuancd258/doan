@@ -23,7 +23,7 @@ public class WeaponController : MonoBehaviour
     }
     public void SetTarget(Vector3 dir)
     {
-        // Tính góc theo arctangent
+        
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         // Gán rotation cho vũ khí
         transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -54,17 +54,17 @@ public class WeaponController : MonoBehaviour
             Debug.Log("Chém vào quái");
             if (weaponData == null) return;
 
-            // Lấy đạn từ pool
+           
             GameObject bullet = PoolManager.Instance.Get(weaponData.projectilePrefab);
             Vector3 pos = new Vector3(posWeapon.transform.position.x, posWeapon.transform.position.y, transform.position.z);
-            // Reset vị trí & xoay
+    
             bullet.transform.position = pos;
             //bullet.transform.rotation = Quaternion.identity;
             // Hướng bắn
             Vector3 dir = (target.position - pos).normalized;
             Bullet BulletScript = bullet.GetComponent<Bullet>();
 
-            // Truyền lệnh "Fire" cùng với hướng và tốc độ LẤY TỪ WEAPONDATA
+ 
             if (BulletScript != null)
             {
                 BulletScript.SetDirection(dir);
