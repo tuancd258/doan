@@ -3,7 +3,7 @@
 public class HealthBar : MonoBehaviour
 {
     public Transform redBar;  // Red rectangle
-    public float fullWidth = 2f; // chiều dài tối đa
+    public float fullWidth = 1f; // chiều dài tối đa
     public Vector3 offset = new Vector3(0, 1f, 0); // đặt trên đầu
 
     public Transform target;  // player hoặc enemy
